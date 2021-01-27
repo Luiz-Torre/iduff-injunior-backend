@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subject: one
+  numerofstudent: 1
+  coursecoordinator: one
+  knowledgearea: MyString
+  headquarterscampus: MyString
+  name: MyString
+
+two:
+  subject: two
+  numerofstudent: 1
+  coursecoordinator: two
+  knowledgearea: MyString
+  headquarterscampus: MyString
+  name: MyString

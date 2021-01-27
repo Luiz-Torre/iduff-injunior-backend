@@ -4,6 +4,7 @@ class CreateSubjects < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :knowledgearea
       t.string :workload
+      t.references :department, foreign_key: true
 
       t.timestamps
     end
