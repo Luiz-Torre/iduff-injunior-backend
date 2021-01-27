@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :grades
+  resources :prerequisites
+  resources :subjects
+  resources :schoolyears
   resources :departments
   post '/login', to: 'authentication#login'
   resources :users

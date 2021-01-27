@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gradeone: 1.5
+  gradetwo: 1.5
+  student: one
+  subject: one
+
+two:
+  gradeone: 1.5
+  gradetwo: 1.5
+  student: two
+  subject: two
