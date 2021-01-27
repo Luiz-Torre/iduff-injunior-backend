@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  calendar: MyString
+  classroom: MyString
+  numberofstudents: 1
+  name: MyString
+  subject: one
+  teacher: one
+
+two:
+  calendar: MyString
+  classroom: MyString
+  numberofstudents: 1
+  name: MyString
+  subject: two
+  teacher: two
