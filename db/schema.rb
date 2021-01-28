@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_27_235351) do
+ActiveRecord::Schema.define(version: 2021_01_28_144401) do
 
   create_table "coursecoordinators", force: :cascade do |t|
     t.integer "user_id"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2021_01_27_235351) do
   end
 
   create_table "courses", force: :cascade do |t|
-    t.integer "subject_id"
     t.integer "numerofstudent"
     t.integer "coursecoordinator_id"
     t.string "knowledgearea"
@@ -29,7 +28,6 @@ ActiveRecord::Schema.define(version: 2021_01_27_235351) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["coursecoordinator_id"], name: "index_courses_on_coursecoordinator_id"
-    t.index ["subject_id"], name: "index_courses_on_subject_id"
   end
 
   create_table "departmentcoordinators", force: :cascade do |t|
