@@ -29,6 +29,8 @@ class Ability
         course_ability = Coursecoordinator.find_by(user_id: user.id).id
 
         can :update, Course, coursecoordinator_id: course_ability
+        can :manage, User, role: 0
+
 
     
     end
