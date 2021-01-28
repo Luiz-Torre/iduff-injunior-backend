@@ -10,13 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_27_224005) do
+ActiveRecord::Schema.define(version: 2021_01_27_235351) do
 
   create_table "coursecoordinators", force: :cascade do |t|
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_coursecoordinators_on_user_id"
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.integer "subject_id"
+    t.integer "numerofstudent"
+    t.integer "coursecoordinator_id"
+    t.string "knowledgearea"
+    t.string "headquarterscampus"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coursecoordinator_id"], name: "index_courses_on_coursecoordinator_id"
+    t.index ["subject_id"], name: "index_courses_on_subject_id"
   end
 
   create_table "departmentcoordinators", force: :cascade do |t|
@@ -36,6 +49,33 @@ ActiveRecord::Schema.define(version: 2021_01_27_224005) do
     t.index ["departmentcoordinator_id"], name: "index_departments_on_departmentcoordinator_id"
   end
 
+  create_table "grades", force: :cascade do |t|
+    t.float "gradeone"
+    t.float "gradetwo"
+    t.integer "student_id"
+    t.integer "subject_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_grades_on_student_id"
+    t.index ["subject_id"], name: "index_grades_on_subject_id"
+  end
+
+  create_table "licenses", force: :cascade do |t|
+    t.integer "teacher_id"
+    t.integer "subject_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_licenses_on_subject_id"
+    t.index ["teacher_id"], name: "index_licenses_on_teacher_id"
+  end
+
+  create_table "prerequisites", force: :cascade do |t|
+    t.integer "subject_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_prerequisites_on_subject_id"
+  end
+
   create_table "principals", force: :cascade do |t|
     t.integer "user_id"
     t.datetime "created_at", null: false
@@ -43,11 +83,51 @@ ActiveRecord::Schema.define(version: 2021_01_27_224005) do
     t.index ["user_id"], name: "index_principals_on_user_id"
   end
 
+  create_table "schoolclasses", force: :cascade do |t|
+    t.string "calendar"
+    t.string "classroom"
+    t.integer "numberofstudents"
+    t.string "name"
+    t.integer "subject_id"
+    t.integer "teacher_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_schoolclasses_on_subject_id"
+    t.index ["teacher_id"], name: "index_schoolclasses_on_teacher_id"
+  end
+
+  create_table "schoolyears", force: :cascade do |t|
+    t.string "status"
+    t.string "year"
+    t.string "half"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "students", force: :cascade do |t|
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_students_on_user_id"
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.string "name"
+    t.string "knowledgearea"
+    t.string "workload"
+    t.integer "department_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["department_id"], name: "index_subjects_on_department_id"
+  end
+
+  create_table "subjectstudieds", force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "subject_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_subjectstudieds_on_student_id"
+    t.index ["subject_id"], name: "index_subjectstudieds_on_subject_id"
   end
 
   create_table "teachers", force: :cascade do |t|
