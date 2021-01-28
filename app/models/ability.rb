@@ -8,19 +8,28 @@ class Ability
       if user.principal?
         can :manage, User
         can :manage, Department
+        can :manage, Course
 
       elsif user.departmentcoordinator?
       
-        depart = Departmentcoordinator.find_by(user_id: user.id).id
+        depart_ability = Departmentcoordinator.find_by(user_id: user.id).id
         
         can :manage, User, role: 1
         can :manage, Schoolclass
         can :manage, License
         can :manage, Subject        
-        can :update, Department, departmentcoordinator_id: depart
+        can :update, Department, departmentcoordinator_id: depart_ability
+
       else
         can :read , User
       end  
+
+      elsif user.departmentcoordinator?
+      
+        course_ability = Coursecoordinator.find_by(user_id: user.id).id
+
+        can :update, Course, coursecoordinator_id: course_ability
+
     
     end
 end
