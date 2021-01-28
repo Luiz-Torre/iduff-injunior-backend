@@ -14,6 +14,8 @@ User.create(name: "Coordenador de Curso 2", nationality: "BR", state: "Rio de Ja
 User.create(name: "Coordenador de Curso 3", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"cordenadordecurso3@id.uff.br", role:2, cpf:"006.000.000-00", password:"123123", password_confirmation:"123123")
 User.create(name: "Professor 1", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"professor@id.uff.br", role:1, cpf:"007.000.000-00", password:"123123", password_confirmation:"123123")
 User.create(name: "Professor 2", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"professor2@id.uff.br", role:1, cpf:"008.000.000-00", password:"123123", password_confirmation:"123123")
+User.create(name: "Aluno 1", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"aluno@id.uff.br", role:0, cpf:"009.000.000-00", password:"123123", password_confirmation:"123123")
+User.create(name: "Aluno 2", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"aluno2@id.uff.br", role:0, cpf:"010.000.000-00", password:"123123", password_confirmation:"123123")
 
 Department.create(name: "Ciencia da Computação", knowledgearea: "Tecnologia", headquarterscampus: "Praia Vermelha", departmentcoordinator_id: 1)
 Department.create(name: "GMA", knowledgearea: "Matematica", headquarterscampus: "Valonguinho", departmentcoordinator_id: 2)

@@ -15,6 +15,7 @@ class Ability
       
         depart_ability = Departmentcoordinator.find_by(user_id: user.id).id
         
+        can :read, Course
         can :manage, User, role: 1
         can :manage, Schoolclass
         can :manage, License
@@ -31,6 +32,8 @@ class Ability
 
       else
         can :read , User
+        can :read, Course
+
       end  
 
      

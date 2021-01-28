@@ -16,7 +16,7 @@ class User < ApplicationRecord
     after_create :createRole
     def createRole
         if self.student?
-            userRole = Student.new(user_id: self.id, course_id: self.course_id)            
+            userRole = Student.new(user_id: self.id)            
         elsif self.teacher?
             userRole = Teacher.new(user_id: self.id)
 
