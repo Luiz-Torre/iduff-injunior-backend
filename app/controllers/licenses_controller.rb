@@ -1,4 +1,6 @@
 class LicensesController < ApplicationController
+  load_and_authorize_resource
+
   before_action :set_license, only: [:show, :update, :destroy]
 
   # GET /licenses
