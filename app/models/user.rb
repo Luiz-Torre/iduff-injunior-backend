@@ -16,16 +16,21 @@ class User < ApplicationRecord
     after_create :createRole
     def createRole
         if self.student?
-            userRole = Student.new(user_id: self.id)
+            userRole = Student.new(user_id: self.id, course_id: self.course_id)            
         elsif self.teacher?
             userRole = Teacher.new(user_id: self.id)
+
         elsif self.coursecoordinator?
             userRole= Coursecoordinator.new(user_id: self.id)
+
         elsif self.departmentcoordinator?
             userRole= Departmentcoordinator.new(user_id: self.id)
+
         elsif self.principal?
             userRole= Principal.new(user_id: self.id)
         end
         userRole.save
     end
+
+
 end

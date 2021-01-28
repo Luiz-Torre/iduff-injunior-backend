@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_28_144401) do
+ActiveRecord::Schema.define(version: 2021_01_27_234519) do
 
   create_table "coursecoordinators", force: :cascade do |t|
     t.integer "user_id"
@@ -104,8 +104,10 @@ ActiveRecord::Schema.define(version: 2021_01_28_144401) do
 
   create_table "students", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_students_on_course_id"
     t.index ["user_id"], name: "index_students_on_user_id"
   end
 

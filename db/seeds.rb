@@ -12,13 +12,28 @@ User.create(name: "Coordenador de Departamento 3", nationality: "BR", state: "Ri
 User.create(name: "Coordenador de Curso", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"cordenadordecurso@id.uff.br", role:2, cpf:"004.000.000-00", password:"123123", password_confirmation:"123123")
 User.create(name: "Coordenador de Curso 2", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"cordenadordecurso2@id.uff.br", role:2, cpf:"005.000.000-00", password:"123123", password_confirmation:"123123")
 User.create(name: "Coordenador de Curso 3", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"cordenadordecurso3@id.uff.br", role:2, cpf:"006.000.000-00", password:"123123", password_confirmation:"123123")
+User.create(name: "Professor 1", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"professor@id.uff.br", role:1, cpf:"007.000.000-00", password:"123123", password_confirmation:"123123")
+User.create(name: "Professor 2", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"professor2@id.uff.br", role:1, cpf:"008.000.000-00", password:"123123", password_confirmation:"123123")
+
 Department.create(name: "Ciencia da Computação", knowledgearea: "Tecnologia", headquarterscampus: "Praia Vermelha", departmentcoordinator_id: 1)
 Department.create(name: "GMA", knowledgearea: "Matematica", headquarterscampus: "Valonguinho", departmentcoordinator_id: 2)
 Department.create(name: "Biologia", knowledgearea: "Ciencias Biologicas", headquarterscampus: "Gragoata", departmentcoordinator_id: 3)
+
 Subject.create(name: "Calculo 1", knowledgearea: "Matematica", workload: "60 horas", department_id: 2)
 Subject.create(name: "Fundamento de Protistas", knowledgearea: "Biologia", workload: "60 horas", department_id: 3)
 Subject.create(name: "Programação Estruturada", knowledgearea: "Tecnologia", workload: "60 horas", department_id: 1)
+
 License.create(teacher_id: 1, subject_id:3)
+License.create(teacher_id: 1, subject_id:2)
+License.create(teacher_id: 2, subject_id:1)
+License.create(teacher_id: 2, subject_id:3)
+
+
+Course.create(coursecoordinator_id:1, knowledgearea: "Tecnologia da Informação", headquarterscampus: "Praia Vermelha",  name:"Ciencias da Computação")
+Course.create(coursecoordinator_id:2, knowledgearea: "Tecnologia da Informação", headquarterscampus: "Praia Vermelha",  name:"Sistema da Informação")
+Course.create(coursecoordinator_id:3, knowledgearea: "Ciencias da Natureza", headquarterscampus: "Praia Vermelha",  name:"Ciencias biologicas")
+
+
 
 
 
