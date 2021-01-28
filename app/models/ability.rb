@@ -14,6 +14,7 @@ class Ability
         depart = Departmentcoordinator.find_by(user_id: user.id).id
         
         can :manage, User, role: 1
+        can :read, Schoolclass
         can :manage, License
         can :manage, Subject        
         can :update, Department, departmentcoordinator_id: depart

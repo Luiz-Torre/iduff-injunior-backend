@@ -18,6 +18,7 @@ Department.create(name: "Biologia", knowledgearea: "Ciencias Biologicas", headqu
 Subject.create(name: "Calculo 1", knowledgearea: "Matematica", workload: "60 horas", department_id: 2)
 Subject.create(name: "Fundamento de Protistas", knowledgearea: "Biologia", workload: "60 horas", department_id: 3)
 Subject.create(name: "Programação Estruturada", knowledgearea: "Tecnologia", workload: "60 horas", department_id: a.id)
+License.create(teacher_id: 1,"subject_id":3)
 
 
 
