@@ -6,6 +6,7 @@ class Subject < ApplicationRecord
     has_one :schoolclass
     has_many :subjectstudieds
 
+    validates :name, :knowledgearea, :workload ,presence: true 
 
 
 end
