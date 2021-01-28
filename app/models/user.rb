@@ -1,5 +1,11 @@
 class User < ApplicationRecord
     has_secure_password
+    has_one :student
+    has_one :teacher
+    has_one :principal
+    has_one :departmentcoordinator
+    has_one :coursecoordinator
+    
     validates :name, :nationality, :state, :RG,:birthdate ,presence: true 
     validates :email, format: {with: /\b[A-Z0-9._%a-z\-]+@id\.uff\.br\z/, message: "Utilize o seu email da UFF. Exemplo: meuemail@id.uff.br"}
     validates :cpf, format: {with: /\b\d{3}\.\d{3}\.\d{3}-\d{2}\z/, message: "Utilize um cpf valido. Exemplo: 000.000.000-00"}
