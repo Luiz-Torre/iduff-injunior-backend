@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_28_180910) do
+ActiveRecord::Schema.define(version: 2021_01_28_212439) do
 
   create_table "coursecoordinators", force: :cascade do |t|
     t.integer "user_id"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 2021_01_28_180910) do
     t.integer "subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "prerequisitecode"
     t.index ["subject_id"], name: "index_prerequisites_on_subject_id"
   end
 
@@ -112,6 +113,15 @@ ActiveRecord::Schema.define(version: 2021_01_28_180910) do
     t.index ["user_id"], name: "index_students_on_user_id"
   end
 
+  create_table "subjectoferreds", force: :cascade do |t|
+    t.integer "subject_id"
+    t.integer "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_subjectoferreds_on_course_id"
+    t.index ["subject_id"], name: "index_subjectoferreds_on_subject_id"
+  end
+
   create_table "subjects", force: :cascade do |t|
     t.string "name"
     t.string "knowledgearea"
@@ -119,7 +129,9 @@ ActiveRecord::Schema.define(version: 2021_01_28_180910) do
     t.integer "department_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "prequisite_id"
     t.index ["department_id"], name: "index_subjects_on_department_id"
+    t.index ["prequisite_id"], name: "index_subjects_on_prequisite_id"
   end
 
   create_table "subjectstudieds", force: :cascade do |t|

@@ -48,3 +48,5 @@ Subjectoferred.create(id_course: 2. id_subject: 2)
 
 
 
+
+
