@@ -24,6 +24,8 @@ Department.create(name: "Biologia", knowledgearea: "Ciencias Biologicas", headqu
 Subject.create(name: "Calculo 1", knowledgearea: "Matematica", workload: "60 horas", department_id: 2)
 Subject.create(name: "Fundamento de Protistas", knowledgearea: "Biologia", workload: "60 horas", department_id: 3)
 Subject.create(name: "Programação Estruturada", knowledgearea: "Tecnologia", workload: "60 horas", department_id: 1)
+Subject.create(name: "Programação Listada em algoritmo espacial", knowledgearea: "Tecnologia", workload: "60 horas", department_id: 1)
+
 
 License.create(teacher_id: 1, subject_id:3)
 License.create(teacher_id: 1, subject_id:2)
@@ -35,11 +37,28 @@ Course.create(code:"TCC01",coursecoordinator_id:1, knowledgearea: "Tecnologia da
 Course.create(code:"SI01",coursecoordinator_id:2, knowledgearea: "Tecnologia da Informação", headquarterscampus: "Praia Vermelha",  name:"Sistema da Informação")
 Course.create(code:"BIO01",coursecoordinator_id:3, knowledgearea: "Ciencias da Natureza", headquarterscampus: "Praia Vermelha",  name:"Ciencias biologicas")
 
+Subjectoferred.create(subject_id:1, course_id:2)
+Subjectoferred.create(subject_id:1, course_id:3)
+Subjectoferred.create(subject_id:2, course_id:1)
+Subjectoferred.create(subject_id:2, course_id:3)
 
-Subjectoferred.create(id_course: 1. id_subject: 1)
-Subjectoferred.create(id_course: 1. id_subject: 2)
-Subjectoferred.create(id_course: 2. id_subject: 1)
-Subjectoferred.create(id_course: 2. id_subject: 2)
+Prerequisite.create(subject_id: 2, prerequisitecode:1)
+Prerequisite.create(subject_id: 1, prerequisitecode:3)
+Prerequisite.create(subject_id: 1, prerequisitecode:4)
+Prerequisite.create(subject_id: 2, prerequisitecode:3)
+
+Schoolclass.create(calendar: "seg terça", classroom:"Sala 304",name: "A1", subject_id:1, teacher_id:1)
+Schoolclass.create(calendar: "quinta domingo", classroom:"Sala 204",name: "J1", subject_id:2, teacher_id:2)
+
+Subjectstudied.create(student_id: 1,subject_id:1)
+Subjectstudied.create(student_id: 1,subject_id:2)
+Subjectstudied.create(student_id: 1,subject_id:3)
+Subjectstudied.create(student_id: 2,subject_id:3)
+Subjectstudied.create(student_id: 2,subject_id:1)
+
+
+Student.create(user_id: 11, course_id:1 )
+Student.create(user_id: 12, course_id:2 )
 
 
 

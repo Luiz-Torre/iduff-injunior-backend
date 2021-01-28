@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2021_01_28_212439) do
   end
 
   create_table "courses", force: :cascade do |t|
-    t.integer "numberofstudent"
+    t.integer "numberofstudent", default: 0
     t.integer "coursecoordinator_id"
     t.string "knowledgearea"
     t.string "headquarterscampus"

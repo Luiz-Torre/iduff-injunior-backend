@@ -3,5 +3,4 @@ class Teacher < ApplicationRecord
   has_many :licenses
   has_one :schoolclass
 
-  validates :schoolclass ,uniqueness: true
 end
