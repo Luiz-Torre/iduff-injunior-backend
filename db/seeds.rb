@@ -31,9 +31,9 @@ License.create(teacher_id: 2, subject_id:1)
 License.create(teacher_id: 2, subject_id:3)
 
 
-Course.create(coursecoordinator_id:1, knowledgearea: "Tecnologia da Informação", headquarterscampus: "Praia Vermelha",  name:"Ciencias da Computação")
-Course.create(coursecoordinator_id:2, knowledgearea: "Tecnologia da Informação", headquarterscampus: "Praia Vermelha",  name:"Sistema da Informação")
-Course.create(coursecoordinator_id:3, knowledgearea: "Ciencias da Natureza", headquarterscampus: "Praia Vermelha",  name:"Ciencias biologicas")
+Course.create(code:"TCC01",coursecoordinator_id:1, knowledgearea: "Tecnologia da Informação", headquarterscampus: "Praia Vermelha",  name:"Ciencias da Computação")
+Course.create(code:"SI01",coursecoordinator_id:2, knowledgearea: "Tecnologia da Informação", headquarterscampus: "Praia Vermelha",  name:"Sistema da Informação")
+Course.create(code:"BIO01",coursecoordinator_id:3, knowledgearea: "Ciencias da Natureza", headquarterscampus: "Praia Vermelha",  name:"Ciencias biologicas")
 
 
 

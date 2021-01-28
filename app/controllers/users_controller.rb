@@ -16,7 +16,10 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
+    
     @user = User.new(user_params)
+    @user.password = @user.cpf
+    @user.password_confirmation = @user.cpf
 
     if @user.save
       render json: @user, status: :created, location: @user

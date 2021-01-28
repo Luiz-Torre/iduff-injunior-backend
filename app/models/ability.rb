@@ -12,11 +12,11 @@ class Ability
 
 
       elsif user.departmentcoordinator?
-      
         depart_ability = Departmentcoordinator.find_by(user_id: user.id).id
-        
+
+        can :update , User, id: user.id
         can :read, Course
-        can :manage, User, role: 1
+        can :create, User, role: 1
         can :manage, Schoolclass
         can :manage, License
         can :manage, Subject        
@@ -24,14 +24,14 @@ class Ability
 
 
       elsif user.coursecoordinator?
-
-        can :manage, User, role: 0
+        can :update , User, id: user.id
+        can :create, User, role: 0
         course_ability = Coursecoordinator.find_by(user_id: user.id).id
 
         can :update, Course, coursecoordinator_id: course_ability
 
       else
-        can :read , User
+        can :update , User, id: user.id
         can :read, Course
 
       end  
