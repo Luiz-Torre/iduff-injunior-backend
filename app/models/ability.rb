@@ -15,7 +15,6 @@ class Ability
         
         can :manage, User, role: 1
         can :manage, Subject        
-        
         can :update, Department, departmentcoordinator_id: depart
       else
         can :read , User

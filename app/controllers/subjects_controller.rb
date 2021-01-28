@@ -47,6 +47,6 @@ class SubjectsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def subject_params
-      params.require(:subject).permit(:name, :knowledgearea, :workload)
+      params.require(:subject).permit(:name, :knowledgearea, :workload, :department_id)
     end
 end
