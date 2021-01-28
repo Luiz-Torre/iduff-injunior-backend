@@ -36,6 +36,15 @@ Course.create(code:"SI01",coursecoordinator_id:2, knowledgearea: "Tecnologia da 
 Course.create(code:"BIO01",coursecoordinator_id:3, knowledgearea: "Ciencias da Natureza", headquarterscampus: "Praia Vermelha",  name:"Ciencias biologicas")
 
 
+Subjectoferred.create(id_course: 1. id_subject: 1)
+Subjectoferred.create(id_course: 1. id_subject: 2)
+Subjectoferred.create(id_course: 2. id_subject: 1)
+Subjectoferred.create(id_course: 2. id_subject: 2)
+
+
+
+
+
 
 
 

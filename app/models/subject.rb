@@ -3,6 +3,7 @@ class Subject < ApplicationRecord
     has_many :licenses
     has_many :prerequisites
     has_one :schoolclass
+    has_many :subjectoferreds
     belongs_to :department
     has_many :subjectstudieds
 
