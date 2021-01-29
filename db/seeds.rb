@@ -5,17 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create(name: "Diretor", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"diretor@id.uff.br", role:4, cpf:"000.000.000-00", password:"123123", password_confirmation:"123123")
-User.create(name: "Coordenador de Departamento 1", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"cordenadordepartamento@id.uff.br", role:3, cpf:"001.000.000-00", password:"123123", password_confirmation:"123123")
-User.create(name: "Coordenador de Departamento 2", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"cordenadordepartamento2@id.uff.br", role:3, cpf:"002.000.000-00", password:"123123", password_confirmation:"123123")
-User.create(name: "Coordenador de Departamento 3", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"cordenadordepartamento3@id.uff.br", role:3, cpf:"003.000.000-00", password:"123123", password_confirmation:"123123")
-User.create(name: "Coordenador de Curso", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"cordenadordecurso@id.uff.br", role:2, cpf:"004.000.000-00", password:"123123", password_confirmation:"123123")
-User.create(name: "Coordenador de Curso 2", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"cordenadordecurso2@id.uff.br", role:2, cpf:"005.000.000-00", password:"123123", password_confirmation:"123123")
-User.create(name: "Coordenador de Curso 3", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"cordenadordecurso3@id.uff.br", role:2, cpf:"006.000.000-00", password:"123123", password_confirmation:"123123")
-User.create(name: "Professor 1", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"professor@id.uff.br", role:1, cpf:"007.000.000-00", password:"123123", password_confirmation:"123123")
-User.create(name: "Professor 2", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"professor2@id.uff.br", role:1, cpf:"008.000.000-00", password:"123123", password_confirmation:"123123")
-User.create(name: "Aluno 1", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"aluno@id.uff.br", role:0, cpf:"009.000.000-00", password:"123123", password_confirmation:"123123")
-User.create(name: "Aluno 2", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"aluno2@id.uff.br", role:0, cpf:"010.000.000-00", password:"123123", password_confirmation:"123123")
+User.create(name: "Diretor", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"diretor@id.uff.br", role:4, cpf:"000.000.000-00", registration:"000111222", password:"123123", password_confirmation:"123123")
+User.create(name: "Coordenador de Departamento 1", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111",registration:"000111222", birthdate:"01/01/0001", email:"cordenadordepartamento@id.uff.br", role:3, cpf:"001.000.000-00", password:"123123", password_confirmation:"123123")
+User.create(name: "Coordenador de Departamento 2", nationality: "BR", registration:"000111222",state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"cordenadordepartamento2@id.uff.br", role:3, cpf:"002.000.000-00", password:"123123", password_confirmation:"123123")
+User.create(name: "Coordenador de Departamento 3", nationality: "BR",registration:"000111222", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"cordenadordepartamento3@id.uff.br", role:3, cpf:"003.000.000-00", password:"123123", password_confirmation:"123123")
+User.create(name: "Coordenador de Curso", nationality: "BR", state: "Rio de Janeiro", registration:"000111222",RG: "111.111-111", birthdate:"01/01/0001", email:"cordenadordecurso@id.uff.br", role:2, cpf:"004.000.000-00", password:"123123", password_confirmation:"123123")
+User.create(name: "Coordenador de Curso 2", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001",registration:"000111222", email:"cordenadordecurso2@id.uff.br", role:2, cpf:"005.000.000-00", password:"123123", password_confirmation:"123123")
+User.create(name: "Coordenador de Curso 3", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001",registration:"000111222", email:"cordenadordecurso3@id.uff.br", role:2, cpf:"006.000.000-00", password:"123123", password_confirmation:"123123")
+User.create(name: "Professor 1", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"professor@id.uff.br",registration:"000111222", role:1, cpf:"007.000.000-00", password:"123123", password_confirmation:"123123")
+User.create(name: "Professor 2", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"professor2@id.uff.br", role:1, cpf:"008.000.000-00", password:"123123",registration:"000111222", password_confirmation:"123123")
+User.create(name: "Aluno 1", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111",registration:"000111222", birthdate:"01/01/0001", email:"aluno001@id.uff.br", role:0, cpf:"009.000.000-00", password:"123123", password_confirmation:"123123")
+User.create(name: "Aluno 2", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111",registration:"000111222", birthdate:"01/01/0001", email:"aluno2@id.uff.br", role:0, cpf:"010.000.000-00", password:"123123", password_confirmation:"123123")
 
 Department.create(name: "Ciencia da Computação", knowledgearea: "Tecnologia", headquarterscampus: "Praia Vermelha", departmentcoordinator_id: 1)
 Department.create(name: "GMA", knowledgearea: "Matematica", headquarterscampus: "Valonguinho", departmentcoordinator_id: 2)
@@ -58,7 +58,7 @@ Subjectstudied.create(student_id: 2,subject_id:1)
 
 
 Student.create(user_id: 11, course_id:1 )
-Student.create(user_id: 12, course_id:2 )
+Student.create(user_id: 10, course_id:2 )
 
 
 
