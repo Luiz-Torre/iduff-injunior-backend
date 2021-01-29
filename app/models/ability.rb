@@ -26,12 +26,17 @@ class Ability
 
       elsif user.coursecoordinator?
         course_ability = Coursecoordinator.find_by(user_id: user.id).id
-
+        
         can :read, Subjectoferred
         can :update , User, id: user.id
         can :create, User, role: 0
-
         can :update, Course, coursecoordinator_id: course_ability
+      
+      elsif user.student?
+        can :manage , Subscription, user_id: user.id
+        can :update , User, id: user.id
+        can :read, Course
+
 
       else
         can :update , User, id: user.id
