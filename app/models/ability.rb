@@ -18,15 +18,18 @@ class Ability
         can :read, Course
         can :create, User, role: 1
         can :manage, Schoolclass
+        can :manage, Subjectoferred
         can :manage, License
         can :manage, Subject        
         can :update, Department, departmentcoordinator_id: depart_ability
 
 
       elsif user.coursecoordinator?
+        course_ability = Coursecoordinator.find_by(user_id: user.id).id
+
+        can :read, Subjectoferred
         can :update , User, id: user.id
         can :create, User, role: 0
-        course_ability = Coursecoordinator.find_by(user_id: user.id).id
 
         can :update, Course, coursecoordinator_id: course_ability
 
