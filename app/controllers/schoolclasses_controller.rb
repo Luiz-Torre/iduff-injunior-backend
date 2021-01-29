@@ -47,6 +47,6 @@ class SchoolclassesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def schoolclass_params
-      params.require(:schoolclass).permit(:calendar, :classroom, :name, :subject_id, :teacher_id)
+      params.require(:schoolclass).permit(:calendar, :classroom, :name, :subject_id, :teacher_id, :vacancy)
     end
 end
