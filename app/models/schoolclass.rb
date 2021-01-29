@@ -8,7 +8,13 @@ class Schoolclass < ApplicationRecord
 
   after_validation :checklicenseteacher
 
-  def checklicenseteacher  
+  def checklicenseteacher
+    if License.find_by(teacher_id: self.teacher_id,subject_id: self.subject_id).present?
+      return true
+    
+  else
+    errors.add :already_exist_license, "O professor não tem licensa para dar essa aula"
+  end
   end
 
 
