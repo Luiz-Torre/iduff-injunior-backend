@@ -6,10 +6,7 @@ class Ability
   def initialize(user)
     user ||= User.new
       if user.principal?
-        can :manage, User
-        can :manage, Department
-        can :manage, Course
-
+        can :manage, :all
 
       elsif user.departmentcoordinator?
         depart_ability = Departmentcoordinator.find_by(user_id: user.id).id

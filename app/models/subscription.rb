@@ -2,15 +2,24 @@ class Subscription < ApplicationRecord
   belongs_to :user
   belongs_to :schoolclass
 
+  validates :user_id, :schoolclass_id ,presence: true
+  after_validation :check_subs
+  
+  def check_subs
+    if Subscription.find_by(user_id: self.user_id,schoolclass_id: self.schoolclass_id).present?
+      errors.add :already_exist_license, "Já inscrito nessa materia"
+    end
+  end
 
-  before_create :checknumberofstudents
+
+  after_validation :checknumberofstudents
 
   def checknumberofstudents
-  byebug
-    if Schoolclass.find(self.schoolclass_id).vacancy >= Schoolclass.find(self.schoolclass_id).numberofstudents
-      :howmanyhasclass
+    if Schoolclass.find(self.schoolclass_id).vacancy > Schoolclass.find(self.schoolclass_id).numberofstudents
+      
+      howmanyhasclass
     else
-      errors.add :max, "Numero Maximo de Alunos"
+     return errors.add :maxs, "Numero Maximo de Alunos"
     end
   end
 
