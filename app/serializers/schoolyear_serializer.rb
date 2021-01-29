@@ -1,3 +1,8 @@
 class SchoolyearSerializer < ActiveModel::Serializer
-  attributes :id, :status, :year, :half
+  attributes :PeriodoAtual, :status
+
+  def PeriodoAtual
+    self.object.year.to_s + "/" + self.object.half.to_s  
+  end
+
 end

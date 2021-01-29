@@ -1,7 +1,8 @@
 class Schoolclass < ApplicationRecord
   belongs_to :subject
   belongs_to :teacher
- 
+  belongs_to :schoolyears
+
   validates :calendar, :vacancy,:classroom, :name, :subject_id,presence: true
   validates :teacher_id , presence: true, uniqueness: true
 

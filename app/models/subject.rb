@@ -6,11 +6,13 @@ class Subject < ApplicationRecord
     has_many :subjectoferreds
     belongs_to :department
     has_many :subjectstudieds
+    belongs_to :schoolyears
+
 
     validates :knowledgearea, :workload ,presence: true
     validates :name, presence: true, uniqueness: true
 
 
-    
+
 
 end

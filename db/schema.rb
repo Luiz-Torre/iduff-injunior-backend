@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_29_221113) do
+ActiveRecord::Schema.define(version: 2021_01_29_223416) do
 
   create_table "coursecoordinators", force: :cascade do |t|
     t.integer "user_id"
@@ -94,7 +94,9 @@ ActiveRecord::Schema.define(version: 2021_01_29_221113) do
     t.datetime "updated_at", null: false
     t.integer "vacancy"
     t.integer "grade_id"
+    t.integer "schoolyear_id"
     t.index ["grade_id"], name: "index_schoolclasses_on_grade_id"
+    t.index ["schoolyear_id"], name: "index_schoolclasses_on_schoolyear_id"
     t.index ["subject_id"], name: "index_schoolclasses_on_subject_id"
     t.index ["teacher_id"], name: "index_schoolclasses_on_teacher_id"
   end
@@ -133,8 +135,10 @@ ActiveRecord::Schema.define(version: 2021_01_29_221113) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "prequisite_id"
+    t.integer "schoolyear_id"
     t.index ["department_id"], name: "index_subjects_on_department_id"
     t.index ["prequisite_id"], name: "index_subjects_on_prequisite_id"
+    t.index ["schoolyear_id"], name: "index_subjects_on_schoolyear_id"
   end
 
   create_table "subjectstudieds", force: :cascade do |t|
@@ -184,6 +188,8 @@ ActiveRecord::Schema.define(version: 2021_01_29_221113) do
     t.string "cep"
     t.string "telephone"
     t.string "cellphone"
+    t.integer "schoolyear_id"
+    t.index ["schoolyear_id"], name: "index_users_on_schoolyear_id"
   end
 
 end

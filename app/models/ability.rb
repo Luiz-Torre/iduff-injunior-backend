@@ -5,11 +5,12 @@ class Ability
 
   def initialize(user)
     user ||= User.new
+    verifystatus = Schoolyear.find(1).status
       if user.principal?
         can :manage, :all
 
       elsif user.departmentcoordinator?
-
+      
         can :update , User, id: user.id
         can :read, Course
         can :create, User, role: 1
@@ -31,7 +32,7 @@ class Ability
       
 
       elsif user.teacher?
-        
+
         can :manage , Grade 
 
 
