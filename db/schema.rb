@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_29_211809) do
+ActiveRecord::Schema.define(version: 2021_01_29_221113) do
 
   create_table "coursecoordinators", force: :cascade do |t|
     t.integer "user_id"
@@ -100,9 +100,9 @@ ActiveRecord::Schema.define(version: 2021_01_29_211809) do
   end
 
   create_table "schoolyears", force: :cascade do |t|
-    t.string "status"
-    t.string "year"
-    t.string "half"
+    t.integer "status", default: 0
+    t.integer "year", default: 0
+    t.integer "half", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
