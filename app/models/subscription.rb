@@ -8,11 +8,12 @@ class Subscription < ApplicationRecord
   def check_subs
     if Subscription.find_by(user_id: self.user_id,schoolclass_id: self.schoolclass_id).present?
       errors.add :already_exist_license, "Já inscrito nessa materia"
+    
+    else
+      checknumberofstudents
     end
   end
 
-
-  after_validation :checknumberofstudents
 
   def checknumberofstudents
     if Schoolclass.find(self.schoolclass_id).vacancy > Schoolclass.find(self.schoolclass_id).numberofstudents

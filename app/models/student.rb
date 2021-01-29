@@ -5,7 +5,7 @@ class Student < ApplicationRecord
   has_many :subjectstudieds
 
   validates :course_id ,presence: true
-  validates :user_id,presence: true, uniqueness: true
+  validates :user_id, uniqueness: true
 
   after_create :howmanyhas
 

@@ -5,4 +5,13 @@ class Schoolclass < ApplicationRecord
   validates :calendar, :vacancy,:classroom, :name, :subject_id,presence: true
   validates :teacher_id , presence: true, uniqueness: true
 
+
+  after_validation :checklicenseteacher
+
+  def checklicenseteacher  
+  end
+
+
+
+
 end

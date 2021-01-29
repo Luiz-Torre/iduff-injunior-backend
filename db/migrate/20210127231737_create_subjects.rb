@@ -3,7 +3,7 @@ class CreateSubjects < ActiveRecord::Migration[5.2]
     create_table :subjects do |t|
       t.string :name
       t.string :knowledgearea
-      t.string :workload
+      t.integer :workload
       t.references :department, foreign_key: true
 
       t.timestamps

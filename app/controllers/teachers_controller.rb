@@ -1,23 +1,23 @@
 class TeachersController < ApplicationController
     load_and_authorize_resource
 
-  before_action :set_student, only: [:show, :update, :destroy]
+  before_action :set_teacher, only: [:show, :update, :destroy]
 
-  # GET /students
+  # GET /teachers
   def index
     @teachers = Teacher.all
 
     render json: @teachers
   end
 
-  # GET /students/1
+  # GET /teachers/1
   def show
     render json: @teacher
   end
 
-  # POST /students
+  # POST /teachers
   def create
-    @teacher = Teacher.new(student_params)
+    @teacher = Teacher.new(teacher_params)
 
     if @teacher.save
       render json: @teacher, status: :created, location: @teacher
@@ -26,28 +26,28 @@ class TeachersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /students/1
+  # PATCH/PUT /teachers/1
   def update
-    if @teacher.update(student_params)
+    if @teacher.update(teacher_params)
       render json: @teacher
     else
       render json: @teacher.errors, status: :unprocessable_entity
     end
   end
 
-  # DELETE /students/1
+  # DELETE /teachers/1
   def destroy
     @teacher.destroy
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_student
+    def set_teacher
       @teacher = Teacher.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
-    def student_params
+    def teacher_params
       params.require(:teacher).permit(:user_id, :department_id)
     end
 end
