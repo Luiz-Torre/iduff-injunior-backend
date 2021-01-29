@@ -31,6 +31,9 @@ class Subscription < ApplicationRecord
     schoolclass.update_attribute(:numberofstudents, value)
   end
 
+
+
+
   def  check_prerequisites
     values_prerequisites = Prerequisite.where(subject_id: 1).select("prerequisitecode")
     values_pre_list = []

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_29_134518) do
+ActiveRecord::Schema.define(version: 2021_01_29_211809) do
 
   create_table "coursecoordinators", force: :cascade do |t|
     t.integer "user_id"
@@ -49,8 +49,8 @@ ActiveRecord::Schema.define(version: 2021_01_29_134518) do
   end
 
   create_table "grades", force: :cascade do |t|
-    t.float "gradeone"
-    t.float "gradetwo"
+    t.integer "gradeone", default: 0
+    t.integer "gradetwo", default: 0
     t.integer "student_id"
     t.integer "subject_id"
     t.datetime "created_at", null: false
@@ -93,6 +93,8 @@ ActiveRecord::Schema.define(version: 2021_01_29_134518) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "vacancy"
+    t.integer "grade_id"
+    t.index ["grade_id"], name: "index_schoolclasses_on_grade_id"
     t.index ["subject_id"], name: "index_schoolclasses_on_subject_id"
     t.index ["teacher_id"], name: "index_schoolclasses_on_teacher_id"
   end
