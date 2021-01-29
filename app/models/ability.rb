@@ -30,6 +30,9 @@ class Ability
         can :update, Course, coursecoordinator_id: course_ability
       
 
+      elsif user.student?
+
+
 
       elsif user.student?
         can :manage , Subscription, user_id: user.id

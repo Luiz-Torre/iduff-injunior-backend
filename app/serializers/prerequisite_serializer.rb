@@ -1,4 +1,4 @@
 class PrerequisiteSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :prerequisitecode
   has_one :subject
 end
