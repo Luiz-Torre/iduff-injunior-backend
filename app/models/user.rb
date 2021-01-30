@@ -5,7 +5,6 @@ class User < ApplicationRecord
     has_one :principal
     has_one :departmentcoordinator
     has_one :coursecoordinator
-    belongs_to :schoolyears
     
     validates :name, :nationality, :state, :RG,:birthdate ,presence: true 
     validates :email, format: {with: /\b[A-Z0-9._%a-z\-]+@id\.uff\.br\z/, message: "Utilize o seu email da UFF. Exemplo: meuemail@id.uff.br"}

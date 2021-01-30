@@ -1,6 +1,5 @@
 class Department < ApplicationRecord
   belongs_to :departmentcoordinator
-  belongs_to :schoolyears
   has_many :subjects
   has_many :teachers
   

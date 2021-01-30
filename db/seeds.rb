@@ -5,7 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create(name: "Diretor", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"diretor@id.uff.br", role:4, cpf:"000.000.000-00", registration:"000111222", password:"123123", password_confirmation:"123123")
+User.create(name: "Luiz Diretor", nationality: "BR", state: "rj", RG: "111-111-20", birthdate:"20/05/1230", email: "diretor@id.uff.br", cpf: "000.000.000-00", role: 4, registration:"000111222", password:"123123", password_confirmation:"123123")
+
+
 User.create(name: "Coordenador de Departamento 1", nationality: "BR", state: "Rio de Janeiro", RG: "111.111-111",registration:"000111222", birthdate:"01/01/0001", email:"cordenadordepartamento@id.uff.br", role:3, cpf:"001.000.000-00", password:"123123", password_confirmation:"123123")
 User.create(name: "Coordenador de Departamento 2", nationality: "BR", registration:"000111222",state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"cordenadordepartamento2@id.uff.br", role:3, cpf:"002.000.000-00", password:"123123", password_confirmation:"123123")
 User.create(name: "Coordenador de Departamento 3", nationality: "BR",registration:"000111222", state: "Rio de Janeiro", RG: "111.111-111", birthdate:"01/01/0001", email:"cordenadordepartamento3@id.uff.br", role:3, cpf:"003.000.000-00", password:"123123", password_confirmation:"123123")
