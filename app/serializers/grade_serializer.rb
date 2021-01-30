@@ -8,15 +8,20 @@ class GradeSerializer < ActiveModel::Serializer
   
 
   def finalmedia 
-    grade1 = Grade.find_by(student_id: self.object.student.id).gradeone
-    grade2 = Grade.find_by(student_id: self.object.student.id).gradetwo
 
-    media = (grade1 + grade2)/2
-    if media >= 6
-      return "Você passou. Sua media foi " + media.to_s
-    
-    else
-      return "Você foi reprovado. Sua media foi " + media.to_s
+    if Schoolyear.first.status == "concluded"
+      grade1 = Grade.find_by(student_id: self.object.student.id).gradeone
+      grade2 = Grade.find_by(student_id: self.object.student.id).gradetwo
+
+      media = (grade1 + grade2)/2
+      if media >= 6
+        return "Você passou. Sua media foi " + media.to_s
+      
+      else
+        return "Você foi reprovado. Sua media foi " + media.to_s
+      end
+    else 
+      return "Aguarde o fim do periodo para verificar sua nota"
     end
 
     end
