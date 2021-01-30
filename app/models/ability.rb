@@ -65,13 +65,7 @@ class Ability
         can :read, Course
 
       else
-      end  
-
-    
-
-
-
-      
+      end        
 
   end
 
