@@ -9,6 +9,6 @@ class Subjectstudied < ApplicationRecord
     if Subjectstudied.find_by(subject_id: self.subject_id,student_id: self.student_id).present?
       errors.add :already_exist_subject, "Já cadastrado essa matéria como cursada para esse aluno"
     end
-end
+  end
 
 end

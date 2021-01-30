@@ -1,11 +1,20 @@
-# frozen_string_literal: true
-
 class Ability
-  include CanCan::Ability
+  include CanCan::Ability   
+ 
+ 
+  
 
   def initialize(user)
-    user ||= User.new    
+
+
+      # if Schoolyear.ids.blank?
+      #   Schoolyear.create(year: (Time.now.year).to_s, half: "1", status: 0)
     
+      # else
+      #   return true
+      # end  
+    
+
       if user.principal?
         can :manage, :all
 
@@ -47,6 +56,16 @@ class Ability
         can :read, Course
       end  
 
-      can :manage, Department    
-    end
+    
+
+
+
+      
+
+  end
+
+  
+    
 end
+
+
