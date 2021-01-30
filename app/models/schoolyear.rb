@@ -5,8 +5,18 @@ class Schoolyear < ApplicationRecord
     after_validation :check_year
   
     def check_year
-      if Schoolyear.find(1).present?
-        errors.add :already_exist, "Periodo existente, para mudanças atualize ele"
+      verifystatus = defined?(Schoolyear.status)
+      if verifystatus == nil
+        Schoolyear.create(year: (Time.now.year).to_s , half: "1", status: 0 )
+      
+      else
+        if Schoolyear.find(1).present?
+          errors.add :already_exist, "Periodo existente, para mudanças atualize ele"
+        end
       end
+      
+     
     end
 end
+
+

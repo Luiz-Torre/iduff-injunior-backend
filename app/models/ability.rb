@@ -4,8 +4,8 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    user ||= User.new
-    verifystatus = Schoolyear.find(1).status
+    user ||= User.new    
+    
       if user.principal?
         can :manage, :all
 
