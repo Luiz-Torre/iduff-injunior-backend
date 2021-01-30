@@ -4,6 +4,7 @@ class Subscription < ApplicationRecord
 
   validates :user_id, :schoolclass_id ,presence: true
   after_validation :check_prerequisites
+  after_validation :check_destroy, on: [:destroy]
   
   def check_subs
     if Subscription.find_by(user_id: self.user_id,schoolclass_id: self.schoolclass_id).present?
@@ -31,14 +32,20 @@ class Subscription < ApplicationRecord
     schoolclass.update_attribute(:numberofstudents, value)
   end
 
+  def check_destroy
+    schoolclass = Schoolclass.find(self.schoolclass_id)
+    value = schoolclass.numberofstudents - 1
+    
+    schoolclass.update_attribute(:numberofstudents, value)
+  end
+
   def  check_prerequisites
-    values_prerequisites = Prerequisite.where(subject_id: 1).select("prerequisitecode")
+    values_prerequisites = Prerequisite.where(subject_id: self.schoolclass.subject_id).select("prerequisitecode")
     values_pre_list = []
     values_prerequisites.each {|x| values_pre_list.append(x.prerequisitecode) }
     values_subjectstudieds = self.user.student.subjectstudieds.select("subject_id")
     values_subjectstudieds_list = []
     values_subjectstudieds.each {|x| values_subjectstudieds_list.append(x.subject_id) }
-
     verify = (values_pre_list - values_subjectstudieds_list).empty?
 
       if verify == true

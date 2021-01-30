@@ -23,14 +23,15 @@ class Ability
         if verify == "planning"
           can :manage, Schoolclass
           can :manage, Subjectoferred
-          can :manage, Teacher, department_id: user.departmentcoordinator.department.id
-          can :manage, License      
+                
 
         end
 
         if verify == "registrations"
           can :read , Subscription
         end
+        can :manage, Teacher, department_id: user.departmentcoordinator.department.id
+        can :manage, License
         can :read, Schoolyear
         can :create, User, role: 1
         can :manage, Subject        
@@ -44,6 +45,7 @@ class Ability
         can :read, Schoolyear
         can :read, Subjectoferred
         can :update , User, id: user.id
+        can :manage, Student, course_id: user.coursecoordinator.course.id
         can :create, User, role: 0
         can :update, Course, coursecoordinator_id: course_ability
       
