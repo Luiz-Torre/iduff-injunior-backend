@@ -17,8 +17,8 @@ User.create(name: "Coordenaor de Curso 2", nationality: "Brasileiro", state: "Ri
 User.create(name: "Coordenaor de Curso 3", nationality: "Brasileiro", state: "Rio de Janeiro", RG: "06.111.111-2", birthdate:"20/05/1230", email: "cordepar3@id.uff.br", cpf: "006.000.000-00", role: 2, registration:"000111227", password:"seed", password_confirmation:"seed")
 User.create(name: "Professor 1", nationality: "Brasileiro", state: "Rio de Janeiro", RG: "10-011.111-2", birthdate:"20/05/1230", email: "professor@id.uff.br", cpf: "007.000.000-00", role: 1, registration:"000111228", password:"seed", password_confirmation:"seed")
 User.create(name: "Professor 2", nationality: "Brasileiro", state: "Rio de Janeiro", RG: "07.111.111-2", birthdate:"20/05/1230", email: "professor2@id.uff.br", cpf: "008.000.000-00", role: 1, registration:"000111229", password:"seed", password_confirmation:"seed")
-User.create(name: "Aluno 1", nationality: "Brasileiro", state: "Rio de Janeiro", RG: "08.111-111.2", birthdate:"20/05/1230", email: "aluno@id.uff.br", cpf: "009.000.000-00", role: 0, registration:"000111210", password:"seed", password_confirmation:"seed")
-User.create(name: "Aluno 2", nationality: "Brasileiro", state: "Rio de Janeiro", RG: "09.111-111.2", birthdate:"20/05/1230", email: "aluno2@id.uff.br", cpf: "010.000.000-00", role: 0, registration:"000111211", password:"seed", password_confirmation:"seed")
+User.create(name: "Aluno 1", nationality: "Brasileiro", state: "Rio de Janeiro", RG: "08.111.111.2", birthdate:"20/05/1230", email: "aluno@id.uff.br", cpf: "009.000.000-00", role: 0, registration:"000111210", password:"seed", password_confirmation:"seed")
+User.create(name: "Aluno 2", nationality: "Brasileiro", state: "Rio de Janeiro", RG: "09.111.111.2", birthdate:"20/05/1230", email: "aluno2@id.uff.br", cpf: "010.000.000-00", role: 0, registration:"000111211", password:"seed", password_confirmation:"seed")
 
 
 Department.create(name: "TCC", knowledgearea: "Tecnologia", headquarterscampus: "Praia Vermelha", departmentcoordinator_id: 1)
