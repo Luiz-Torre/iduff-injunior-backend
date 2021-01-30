@@ -5,6 +5,7 @@ class Ability
   
 
   def initialize(user)
+    user ||= User.new
 
 
       # if Schoolyear.ids.blank?
