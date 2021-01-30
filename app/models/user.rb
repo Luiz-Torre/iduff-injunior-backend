@@ -9,7 +9,7 @@ class User < ApplicationRecord
     validates :name, :state,:birthdate ,presence: true 
     validates :email, format: {with: /\b[A-Z0-9._%a-z\-]+@id\.uff\.br\z/, message: "Utilize o seu email da UFF. Exemplo: meuemail@id.uff.br"}
     validates :cpf, format: {with: /\b\d{3}\.\d{3}\.\d{3}-\d{2}\z/, message: "Utilize um cpf valido. Exemplo: 000.000.000-00"}
-    validates :RG, format: {with: /\b\d{2}\.\d{3}\.\d{3}-\d{1}\z/, message: "Utilize um cpf valido. Exemplo: 000.000.000-00"}
+    validates :RG, format: {with: /\b\d{2}\.\d{3}\.\d{3}-\d{1}\z/, message: "Utilize um RG valido. Exemplo: 00.000.000-0"}
 
     validates :cpf,:RG, presence: true, uniqueness: true
     
