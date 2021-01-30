@@ -1,5 +1,9 @@
 class GradeSerializer < ActiveModel::Serializer
   attributes :id, :gradeone, :gradetwo
-  has_one :student
-  has_one :subject
+ 
+  belongs_to :student
+  belongs_to :subject  
+
+
+  byebug
 end

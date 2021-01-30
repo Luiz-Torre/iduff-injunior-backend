@@ -2,7 +2,7 @@ class Schoolyear < ApplicationRecord
 
     validates :status, presence: :true
     enum status: {planning: 0,  registrations:1, progress:2, concluded: 3}
-    after_validation :check_year
+    # after_validation :check_year
   
     # def check_year
     #   if Schoolyear.first.blank?
