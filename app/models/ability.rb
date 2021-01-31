@@ -32,6 +32,7 @@ class Ability
         end
         can :manage, Teacher, department_id: user.departmentcoordinator.department.id
         can :manage, License
+        can :read, User
         can :read, Schoolyear
         can :create, User, role: 1
         can :manage, Subject        
@@ -44,6 +45,7 @@ class Ability
         course_ability = Coursecoordinator.find_by(user_id: user.id).id
         can :read, Schoolyear
         can :read, Subjectoferred
+        can :read, User
         can :update , User, id: user.id
         can :manage, Student, course_id: user.coursecoordinator.course.id
         can :create, User, role: 0
@@ -54,6 +56,7 @@ class Ability
         if verify == "progress"
           can :manage , Grade 
         end
+        can :read, User
         can :read, Schoolyear
         can :read, Course
         can :update , User, id: user.id
@@ -64,6 +67,7 @@ class Ability
         if verify == "registrations"
           can :manage , Subscription, user_id: user.id
         end
+        can :read, User
         can :read, Schoolyear
         can :read , Grade, id: user.student.id
         can :update , User, id: user.id
